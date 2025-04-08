@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clymate Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="body">
+  <div class="container">
+    <h1>🌿 Clymate</h1>
+
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <input type="text" id="cityInput" placeholder="Enter city..." />
+    <button onclick="searchCity()">Search</button>
+
+    <div class="card">
+      <h2>Weather in <span id="city">Loading...</span></h2>
+      <img id="weatherIcon" src="" alt="Weather icon" class="weather-icon" />
+      <p>🌡️ <span id="temp"></span>°C</p>
+      <p>💧 Humidity: <span id="humidity"></span>%</p>
+      <p>🌥️ Condition: <span id="condition"></span></p>
+    </div>
+
+    <div class="card">
+      <h2>Air Quality</h2>
+      <p>🧪 AQI: <span id="aqiIndex"></span></p>
+      <p>🌫️ PM2.5: <span id="pm25"></span></p>
+      <canvas id="aqiChart" width="300" height="150"></canvas>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
